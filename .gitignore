@@ -34,3 +34,4 @@ build/
 
 ### personal ###
 /src/main/java/com/JavaProyect/ChallengeBackend/Configs/
+bin
