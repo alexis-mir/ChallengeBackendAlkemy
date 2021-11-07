@@ -1,6 +1,8 @@
 package com.challenge.java.dto;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +26,7 @@ public class PeliculaDTO implements Serializable {
 
     private String imagen;
     private String titulo;
-    private Date fechaCreacion;
+    private LocalDateTime fechaCreacion;
     private Float calificacion;
     private List<Long> personajesId;
     private List<Long> generosId;

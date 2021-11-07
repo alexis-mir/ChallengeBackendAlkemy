@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 import com.challenge.java.dto.PersonajeSimpleDTO;
 import com.challenge.java.model.Personaje;
-import com.challenge.java.service.PeliculaSerieService;
+import com.challenge.java.service.impl.MovieServiceImpl;
 import com.challenge.java.service.PersonajeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class PersonajeController {
     @Autowired
     PersonajeService personajeService;
     @Autowired
-    PeliculaSerieService peliculaService;
+    MovieServiceImpl peliculaService;
 
     @GetMapping()
     public ArrayList<PersonajeSimpleDTO> obtenerPersonajes(
@@ -75,7 +75,8 @@ public class PersonajeController {
 
     @PostMapping()
     public Personaje guardarPersonaje(@RequestBody Personaje personaje){
-        if(personaje.getPeliculasSeries() != null) personaje.getPeliculasSeries().forEach(p -> this.peliculaService.guardarPelicula(peliculaService.aPeliculaDTO(p)));
+        //if(personaje.getPeliculasSeries() != null) personaje.getPeliculasSeries().forEach(p -> this.peliculaService.save(peliculaService.aPeliculaDTO(p)));
+        //TODO: hay que verificar si manda peliculas para guardarlas
         return this.personajeService.guardarPersonaje(personaje);
     }
 

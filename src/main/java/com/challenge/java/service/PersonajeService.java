@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.challenge.java.dto.PersonajeSimpleDTO;
-import com.challenge.java.model.PeliculaSerie;
+import com.challenge.java.model.Movie;
 import com.challenge.java.model.Personaje;
 import com.challenge.java.repository.PersonajeRepository;
 
@@ -30,7 +30,7 @@ public class PersonajeService {
                                                                 .peso(o.getPeso())
                                                                 .historia(o.getHistoria())
                                                                 .peliculasSeriesId(
-                                                                    o.getPeliculasSeries().stream().map(PeliculaSerie::getId).collect(Collectors.toList())
+                                                                    o.getPeliculasSeries().stream().map(Movie::getId).collect(Collectors.toList())
                                                                     )
                                                                 .build()
                                                                 ));
@@ -57,7 +57,7 @@ public class PersonajeService {
             .peso(p.getPeso())
             .historia(p.getHistoria())
             .peliculasSeriesId(
-                p.getPeliculasSeries().stream().map(PeliculaSerie::getId).collect(Collectors.toList())
+                p.getPeliculasSeries().stream().map(Movie::getId).collect(Collectors.toList())
             )
             .build()
         ).get();
@@ -76,7 +76,7 @@ public class PersonajeService {
         .peso(o.getPeso())
         .historia(o.getHistoria())
         .peliculasSeriesId(
-            o.getPeliculasSeries().stream().map(PeliculaSerie::getId).collect(Collectors.toList())
+            o.getPeliculasSeries().stream().map(Movie::getId).collect(Collectors.toList())
         )
         .build()
         ));
@@ -96,7 +96,7 @@ public class PersonajeService {
         .peso(o.getPeso())
         .historia(o.getHistoria())
         .peliculasSeriesId(
-            o.getPeliculasSeries().stream().map(PeliculaSerie::getId).collect(Collectors.toList())
+            o.getPeliculasSeries().stream().map(Movie::getId).collect(Collectors.toList())
         )
         .build()
         ));

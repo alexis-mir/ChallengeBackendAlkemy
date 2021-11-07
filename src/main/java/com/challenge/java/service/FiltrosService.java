@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.challenge.java.dto.PeliculaDTO;
 import com.challenge.java.dto.PersonajeSimpleDTO;
 import com.challenge.java.repository.GeneroRepository;
-import com.challenge.java.repository.PeliculaSerieRepository;
+import com.challenge.java.repository.MovieRepository;
 import com.challenge.java.repository.PersonajeRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class FiltrosService {
     @Autowired
     PersonajeRepository personajeRepository;
     @Autowired
-    PeliculaSerieRepository peliculaSerieRepository;
+    MovieRepository movieRepository;
     @Autowired
     GeneroRepository generoRepository;
 
