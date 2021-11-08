@@ -33,7 +33,7 @@ public class Genero {
         joinColumns = @JoinColumn(name = "genero_id"), 
         inverseJoinColumns = @JoinColumn(name = "pelicula_id")
     )
-    private List<Movie> peliculasSeriesG;
+    private List<Movie> movies;
 
 
 

@@ -20,6 +20,7 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String image;
+    @NotNull
     private String title;
     @NotNull
     private LocalDateTime createAt = LocalDateTime.now();
@@ -27,6 +28,6 @@ public class Movie {
     private Float score;
     @ManyToMany(mappedBy = "peliculasSeries")
     private List<Personaje> characters;
-    @ManyToMany(mappedBy = "peliculasSeriesG")
+    @ManyToMany(mappedBy = "movies")
     private List<Genero> genres;
 }
