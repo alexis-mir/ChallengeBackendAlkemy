@@ -114,14 +114,4 @@ public class MovieServiceImpl implements MovieService {
             throw new NotFoundException("Movie Not Found.");
         movieRepository.deleteById(id);
     }
-
-    private List<Movie> ordenarDesc(List<Movie> peliculas) {
-        peliculas.sort((x, y) -> y.getId().compareTo(x.getId()));
-        return peliculas;
-    }
-
-    private List<Movie> ordenarAsc(List<Movie> peliculas) {
-        peliculas.sort((x, y) -> x.getId().compareTo(y.getId()));
-        return peliculas;
-    }
 }

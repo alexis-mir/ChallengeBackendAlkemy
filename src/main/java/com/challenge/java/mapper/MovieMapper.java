@@ -2,11 +2,11 @@ package com.challenge.java.mapper;
 
 import com.challenge.java.dto.MovieRequestDTO;
 import com.challenge.java.dto.MovieResponseDTO;
+import com.challenge.java.model.Character;
 import com.challenge.java.model.Genre;
 import com.challenge.java.model.Movie;
-import com.challenge.java.model.Personaje;
 import com.challenge.java.service.GenreService;
-import com.challenge.java.service.PersonajeService;
+import com.challenge.java.service.CharacterService;
 import org.mapstruct.*;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * @author Alexis
  */
-@Mapper(componentModel = "Spring", uses = {PersonajeService.class, GenreService.class})
+@Mapper(componentModel = "Spring", uses = {CharacterService.class, GenreService.class})
 public interface MovieMapper {
     @Mapping(target = "characters", source = "charactersId")
     @Mapping(target = "genres", source = "genresId")
@@ -35,9 +35,9 @@ public interface MovieMapper {
     @Mapping(target = "genres", source = "genresId")
     void updateFromDTO(MovieRequestDTO movieRequestDTO, @MappingTarget Movie movie);
 
-    List<Long> charactersToListId(List<Personaje> characters);
+    List<Long> charactersToListId(List<Character> characters);
 
-    default Long characterToId(Personaje character) {
+    default Long characterToId(Character character) {
         return character.getId();
     }
 

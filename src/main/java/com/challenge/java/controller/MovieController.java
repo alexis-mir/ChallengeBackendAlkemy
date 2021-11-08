@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 
 @RestController
 @RequestMapping("/movies")
@@ -32,13 +34,13 @@ public class MovieController {
     }
 
     @PostMapping()
-    public ResponseEntity<MovieResponseDTO> save(@RequestBody MovieRequestDTO movieRequestDTO) {
+    public ResponseEntity<MovieResponseDTO> save(@Valid @RequestBody MovieRequestDTO movieRequestDTO) {
         return new ResponseEntity<>(movieService.save(movieRequestDTO), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<MovieResponseDTO> update(
-            @RequestBody MovieRequestDTO movieRequestDTO,
+            @Valid @RequestBody MovieRequestDTO movieRequestDTO,
             @PathVariable("id") Long id) {
         return new ResponseEntity<>(movieService.update(movieRequestDTO, id),HttpStatus.OK);
     }
