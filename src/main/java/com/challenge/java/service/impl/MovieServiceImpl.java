@@ -10,7 +10,7 @@ import com.challenge.java.dto.MovieRequestDTO;
 import com.challenge.java.dto.MovieResponseDTO;
 import com.challenge.java.exception.NotFoundException;
 import com.challenge.java.mapper.MovieMapper;
-import com.challenge.java.model.Genero;
+import com.challenge.java.model.Genre;
 import com.challenge.java.model.Movie;
 import com.challenge.java.repository.MovieRepository;
 
@@ -44,7 +44,7 @@ public class MovieServiceImpl implements MovieService {
 
         Predicate<Movie> titlePredicate = m -> m.getTitle().equals(title);
         Predicate<Movie> genreIdPredicate = m -> m.getGenres().stream()
-                .map(Genero::getId)
+                .map(Genre::getId)
                 .collect(Collectors.toList())
                 .contains(genreId);
 

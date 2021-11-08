@@ -29,5 +29,5 @@ public class Movie {
     @ManyToMany(mappedBy = "peliculasSeries")
     private List<Personaje> characters;
     @ManyToMany(mappedBy = "movies")
-    private List<Genero> genres;
+    private List<Genre> genres;
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.challenge.java.dto.PeliculaDTO;
 import com.challenge.java.dto.PersonajeSimpleDTO;
-import com.challenge.java.repository.GeneroRepository;
+import com.challenge.java.repository.GenreRepository;
 import com.challenge.java.repository.MovieRepository;
 import com.challenge.java.repository.PersonajeRepository;
 
@@ -20,7 +20,7 @@ public class FiltrosService {
     @Autowired
     MovieRepository movieRepository;
     @Autowired
-    GeneroRepository generoRepository;
+    GenreRepository genreRepository;
 
     public ArrayList<PersonajeSimpleDTO> filtrarPersonajePorPeliculaId(ArrayList<PersonajeSimpleDTO> personajes, Long peliculaId){
         
