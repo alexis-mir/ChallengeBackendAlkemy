@@ -23,7 +23,7 @@ public class Movie {
     private String title;
     @NotNull
     private LocalDateTime createAt = LocalDateTime.now();
-    private boolean deleted = false;
+    private boolean deleted;
     private Float score;
     @ManyToMany(mappedBy = "peliculasSeries")
     private List<Personaje> characters;

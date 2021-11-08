@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.challenge.java.dto.MovieRequestDTO;
 import com.challenge.java.dto.MovieResponseDTO;
-import com.challenge.java.service.impl.MovieServiceImpl;
+import com.challenge.java.service.MovieService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/movies")
 public class MovieController {
     @Autowired
-    MovieServiceImpl movieService;
+    MovieService movieService;
 
     @GetMapping()
     public ResponseEntity<List<MovieResponseDTO>> findDtoAll(

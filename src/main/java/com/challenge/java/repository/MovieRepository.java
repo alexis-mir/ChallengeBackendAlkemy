@@ -9,7 +9,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long> {
-    public abstract List<Movie> findByTitulo(String titulo);
-    public List<Movie> findAllByOrderByIdAsc();
-    public abstract List<Movie> findAllByOrderByIdDesc();
+    List<Movie> findByTitle(String title);
+
+    List<Movie> findAllByOrderByIdAsc();
+
+    List<Movie> findAllByOrderByIdDesc();
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.challenge.java.dto.PersonajeSimpleDTO;
+import com.challenge.java.exception.NotFoundException;
 import com.challenge.java.model.Movie;
 import com.challenge.java.model.Personaje;
 import com.challenge.java.repository.PersonajeRepository;
@@ -16,6 +17,11 @@ import org.springframework.stereotype.Service;
 public class PersonajeService {
     @Autowired
     PersonajeRepository personajeRepository;
+
+    public Personaje findById(Long id){
+        return personajeRepository.findById(id)
+                .orElseThrow(()-> new NotFoundException("Character not found"));
+    }
 
     public ArrayList<PersonajeSimpleDTO> obtenerTodosPersonajes(){
         ArrayList<Personaje> todosPersonajes = (ArrayList<Personaje>) personajeRepository.findAll();

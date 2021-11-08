@@ -13,9 +13,7 @@ import com.challenge.java.mapper.MovieMapper;
 import com.challenge.java.model.Movie;
 import com.challenge.java.repository.MovieRepository;
 
-import com.challenge.java.service.GeneroService;
 import com.challenge.java.service.MovieService;
-import com.challenge.java.service.PersonajeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
