@@ -33,5 +33,4 @@ build/
 .vscode/
 
 ### personal ###
-/src/main/java/com/challenge/java/Configs/
 bin
