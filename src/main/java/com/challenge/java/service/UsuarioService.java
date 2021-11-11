@@ -48,10 +48,11 @@ public class UsuarioService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return usuarioRepository.findByUsername(username).map(u -> {
             GrantedAuthority authority;
-            if (u.getRole() == null)
+            if (u.getRole() == null) {
                 authority = new SimpleGrantedAuthority("ROLE_USER");
-            else
+            } else {
                 authority = new SimpleGrantedAuthority("ROLE_" + u.getRole().toString());
+            }
             return new User(u.getUsername(), u.getPassword(), List.of(authority));
         }).orElseThrow(() -> new UsernameNotFoundException(username));
     }
