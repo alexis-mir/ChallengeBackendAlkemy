@@ -21,6 +21,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -53,7 +54,7 @@ public class UsuarioService implements UserDetailsService {
             } else {
                 authority = new SimpleGrantedAuthority("ROLE_" + u.getRole().toString());
             }
-            return new User(u.getUsername(), u.getPassword(), List.of(authority));
+            return new User(u.getUsername(), u.getPassword(), Arrays.asList(authority));
         }).orElseThrow(() -> new UsernameNotFoundException(username));
     }
 
